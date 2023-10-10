@@ -1,0 +1,365 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+body{
+    min-height: 100vh;
+    width:100%;
+    background-color: #e8dff5;
+    background:#ccd9ff;
+}
+
+
+/* message showing interface css */
+.message-interface{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:100;
+    height:100vh;
+    width:100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffffb1;
+    animation:pop-message .3s linear forwards;
+}
+.message-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background:#202020;
+    min-width: 280px;
+    padding:20px 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px #5678ff;
+}
+.message-box .logo .message-logo{
+    padding:5px 10px;
+    border-radius: 5px;
+    color:#fff;
+    margin-bottom:5px;
+}
+.message-box .logo .trash,.message-box .logo .exclamation{  
+    background-color: red;
+}
+.message-box .logo .check{
+    background-color: rgb(21, 255, 0);
+}
+.message-box .logo .confirm{
+    background-color: blue;
+}
+.message-box .logo .save{
+    background-color: rgb(255, 230, 0);
+}
+.message-box .text p{
+    font-size:18px;
+    color:#fff;
+    text-align: center;
+    font-weight: bolder;
+}
+.message-box .err-text p{
+    color:rgb(255, 0, 0);
+}
+.btn{
+    width:85px;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 8px black;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.btn.ok-btn{
+    background-color: blue;
+    color:#fff;
+}
+.btn.Yes-btn{
+    background-color: rgb(77, 255, 0);
+    color:#000;
+}
+.btn.No-btn{
+    background-color: red;
+    color:#fff;
+}
+.confirm-btns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+}
+#file-name{
+    margin-top: 5px;
+    width:100%;
+    border-radius: 5px;
+    height:25px;
+    outline: none;
+    text-align: center;
+    font-weight: bolder;
+}
+#file-name:focus{
+    box-shadow: 0px 0px 7px blue;
+}
+@keyframes pop-message {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+
+/* saved files showing interface css */
+#files{
+    display: none;
+    color:#fff;
+    position:fixed;
+    height: 100vh;   
+    width:30%;
+    top:0;
+    left:0;
+    background:#96beff;
+    box-shadow: 2px 2px 8px black;
+    animation: pop .5s linear forwards;
+    z-index: 50;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+/* heading of files interface page css */
+.files-head{
+    color:#000;
+    border-bottom: 2px solid #000;
+    margin-bottom:30px;
+    height:50px;
+}
+.files-head,.files{
+    padding:0px 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* saved files css */
+.files{
+    padding:10px 15px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.436);
+}
+.file-name{
+    color: #000;
+}
+.close{
+    font-size: 25px;
+    padding:0px 5px;
+    background-color: red;
+    border-radius: 5px;
+}
+/* file edit button */
+.edit{
+    padding:5px 10px;
+    background-color: blue;
+    border-radius: 5px;
+    width:35px;
+    position: absolute;
+    right: 50px;
+}
+/* file delete button */
+.delete{
+    padding:5px 10px;
+    background-color: red;
+    border-radius: 5px;
+    width:35px;
+    position: absolute;
+    right: 5px;
+}
+.close:hover,.delete:hover,.edit:hover{
+    cursor: pointer;
+}
+@keyframes pop {
+    from{
+        left:-70%;
+    }
+    to{
+        left:0px;
+    }
+}
+
+
+/* main web page css */
+#main{
+    min-height: 100vh;
+    width:100%;
+    background:#ccd9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* nav bar where text opertion opertions are placed css */
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 50px;
+    width:494px;
+    background-color: #000;
+    margin-bottom: 15px;
+    padding:5px 0px;
+    box-shadow: 2px 2px 8px black;
+    border-radius: 5px;
+}
+.nav-boxs{
+    margin: 5px 0px;
+    padding:0px 5px;
+    border:2px solid #fff;
+    color:#fff;
+    height:30px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.nav-boxs:nth-child(9){
+    margin-right: 0px;
+}
+/* main text area css  */
+#editor{
+    height:500px;
+    width:494px;
+    position: relative;
+    box-shadow: 2px 2px 8px black;
+    border-radius: 5px;
+}
+
+.editor{
+    background-color: #fff;
+    height:100%;
+    width:100%;
+    outline: none;
+    font-size: 20px;
+    padding: 5px;
+    border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}
+/* bottom buttons of different operations of editor css */
+.btns{
+    margin: 30px 0px 5px 0px;
+    border: none;
+    width:494px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.operation-btn{
+    width:120px;
+    height:35px;
+    background-color: rgb(153, 255, 0);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 8px black;
+    margin: 10px 5px 0px 0px;
+}
+.operation-btn:nth-child(3){
+    margin-right: 0px;
+}
+.operation-btn:hover{
+    cursor:pointer;
+}
+.clear-all{
+    color: #fff;
+    background-color: red;
+}
+.open-files{
+    background-color: blue;
+    color:#fff;
+}
+.editor.bolder{
+    font-weight: bolder;
+}
+.editor.italics{
+    font-style: italic;
+}
+.editor.underlines{
+    text-decoration: underline;
+}
+.editor.right{
+    text-align: right;
+}
+.editor.center{
+    text-align: center;
+}
+.editor.left{
+    text-align: left;
+}
+.editor.justify{
+    text-align:justify;
+}
+.bold.click,.italic.click,.underline.click,.left-align.click,.center-align.click,.right-align.click,.justify.click{
+    background-color: #fff;
+    color: #000;
+}
+
+
+/* media queries */
+@media (max-width:800px) {
+    #files{
+        width:50%;
+    }
+}
+@media (max-width:500px) {
+    .increase-font-size{
+        display: none;
+    }
+    .nav{
+        width:100%;
+    }
+    #editor{
+        width:100%;
+    }
+    .btns{
+        width:100%;
+    }
+}
+@media (max-width:450px) {
+    #files{
+        width:70%;
+    }
+}
+@media (max-width:376px) {
+    .operation-btn{
+        width:90px;
+        height:35px;
+        font-size: 13px;
+    }
+    .nav-boxs{
+        margin: 5px 0px;
+        padding:0px 5px;
+        border:2px solid #fff;
+        color:#fff;
+        height:30px;
+        font-size: 17px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+}

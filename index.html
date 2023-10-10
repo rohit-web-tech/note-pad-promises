@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-sca.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>RWT||Text-Editor</title>
+</head>
+
+<body>
+    <!-- main web page  -->
+    <div id="main">
+        <!-- alert message interface -->
+        <div id="alert" class="message-interface">
+            <div class="alert-box message-box">
+                <div class="logo">
+                </div>
+                <div class="text">
+                    <p></p>
+                </div>
+                <button class="ok-btn btn">Ok</button>
+            </div>
+        </div>
+        <!-- confirm message interface -->
+        <div id="confirm" class="message-interface">
+            <div class="confirm-box message-box">
+                <div class="logo">
+                    <div class="confirm message-logo"><i class="fa-solid fa-question"></i></div>
+                </div>
+                <div class="text">
+                    <p></p>
+                </div>
+                <div class="confirm-btns">
+                    <button class="Yes-btn btn" >Yes</button>
+                    <button class="No-btn btn" >No</button>
+                </div>
+            </div>
+        </div>
+        <!-- file name input interface -->
+        <div id="prompt" class="message-interface">
+            <div class="prompt-box message-box">
+                <div class="logo">
+                    <div class="save message-logo"><i class="fa-solid fa-save"></i></div>
+                </div>
+                <div class="text">
+                    <p></p>
+                </div>
+                <input type="text" class="text" id="file-name" placeholder="Enter File Name">
+                <div class="confirm-btns">
+                    <button class="Yes-btn btn">Ok</button>
+                    <button class="No-btn btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <!-- saved files interface -->
+        <div id="files">
+            <div class="files-head">
+                <h2><i class="fa-solid fa-file"></i> Your Files</h2>
+                <div class="close"><i class="fa-solid fa-close"></i></div>
+            </div>
+            <div class="files-bar"></div>
+        </div>
+        <!-- text editing components buttons bar  -->
+        <div class="nav">
+            <div class="nav-boxs increase-font-size"><i class="fa-solid fa-font"></i></div>
+            <div class="nav-boxs bold"><i class="fa-solid fa-bold"></i></div>
+            <div class="nav-boxs italic"><i class="fa-solid fa-italic"></i></div>
+            <div class="nav-boxs underline"><i class="fa-solid fa-underline"></i></div>
+            <div class="nav-boxs left-align"><i class="fa-solid fa-align-left"></i></div>
+            <div class="nav-boxs center-align"><i class="fa-solid fa-align-center"></i></div>
+            <div class="nav-boxs right-align"><i class="fa-solid fa-align-right"></i></div>
+            <div class="nav-boxs justify"><i class="fa-solid fa-align-justify"></i></div>
+            <input type="color" id="color" class="nav-boxs">
+        </div>
+        <!-- main text editor space (text area) -->
+        <div id="editor">
+            <textarea name="editor" class="editor" placeholder="Write Text Here"></textarea>
+        </div>
+        <!-- buttons for text editor's different opertaions -->
+        <div class="btns">
+            <div class="save-file operation-btn"><i class="fa-solid fa-save"></i> Save</div>
+            <div class="open-files operation-btn"><i class="fa-solid fa-file"></i> Open A File </div>
+            <div class="clear-all operation-btn"><i class="fa-solid fa-close"></i> Close File</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
